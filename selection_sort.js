@@ -1,3 +1,8 @@
+// Program to implement selection sort algorithm. The algorithm uses two functions swap and indexOfMinimum
+// swap function swaps the values of the array at firstIndex and the secondIndex
+// indexOfMinimum function returns index of the minimum value found in the array passed to the function with a starting index
+
+
 var swap = function(array, firstIndex, secondIndex) {
     var temp = array[firstIndex];
     array[firstIndex] = array[secondIndex];
@@ -20,12 +25,15 @@ var indexOfMinimum = function(array, startIndex) {
 
 var selectionSort = function(array) {
     
-    for(var i = 0 ; i < array.length ; i++){
-        var index = indexOfMinimum(array , i);
-        swap(array, i , index);
+    for(var i = 0 ; i < array.length ; i++){            // Loop to run and find min for each sub array and place
+        var index = indexOfMinimum(array , i);          // it in the right order and continue the same in the next sub array.
+        swap(array, i , index);                         // Swap value of the current index with that of the minimum found in the subarray.
     }
 
 };
+
+// Examples to check the implementation of algorithm 
+// using both positive and negative integers and a 0.
 
 var array = [22, 11, 99, 88, 9, 7, 42];
 var array1 = [0, 22, 11, 99, 88, 9, 7, 42];
